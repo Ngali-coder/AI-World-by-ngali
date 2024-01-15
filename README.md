@@ -1,0 +1,1 @@
+This is a conception adn realisation of an application that integrates artificial intelligence capable of forecasting sales, predicting prices, analyses clients sentiments and also generates a chatbot. It is a project that assemble four artificial intelligence in to a single application named AI-WORLD. 
