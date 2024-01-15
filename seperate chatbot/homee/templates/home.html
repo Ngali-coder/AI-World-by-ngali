@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AI WOLRD</title>
+<!--	<link rel="stylesheet" href="home.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+</head>
+<body>
+	<div class="wrapper">
+			<div class="center">
+			<h2>WELCOME TO AI WORLD</h2>
+			
+			<div class="buttons">
+                <a href="{{url_for('manager')}}"> <button>MANAGER</button> </a>
+                <a href="{{url_for('c_register')}}"> <button class="btn2">CLIENT</button> </a>
+<!--            <a href="manager.html"> <button>MANAGER</button> </a>-->
+<!--            <a href="finalclient.html"><button class="btn2">CLIENT  </button> </a>-->
+
+			<!-- <button>MANAGER</button> -->
+			
+		</div>
+		</div>
+
+        <div class="slider-frame">
+            <div class="slide-images">
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/photo5.png') }}">
+<!--                        <img src="photo5.png">-->
+                    </div>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/photo2.png') }}">
+<!--                        <img src="photo2.png">-->
+                    </div>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/phott1.png') }}">
+<!--                        <img src="phott1.png">-->
+                    </div>
+                   
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>sentiment analysis</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='client.js') }}"></script>
+<!-- <script src="client.js"></script> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='client.css') }}">
+  
+</head>
+
+<body>
+
+  <div class="img"></div>
+
+ <div class="login">
+	<h2>Comment about a product</h2>
+
+    <form>
+
+        <textarea name="tweet" id="uiSqft20" cols="40" rows="10">Enter the comment here</textarea>
+
+        <button class="submit" onclick="onClickGetSentiment()" type="button">SUBMIT</button>
+
+      <section>
+        <div id="uiTweet" class="result"  class="container">yo	<h2></h2> </div>
+
+      </section> 
+
+    </form>
+
+   <br>
+   <br>
+ </div>
+ <button style="color: red; font-size: 15px;"><h1><a href="{{url_for('client_choice')}}"> BACK </a></h1></button>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AI WOLRD</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='managerchoice.css') }}">
+</head>
+<body>
+	<div class="wrapper">
+		<button style="color: red; font-size: 15px;"><h1><a href=" {{url_for('logout_manager')}}"> LOGOUT </a></h1></button>
+		<div class="center">
+			<h2>WELCOME MY HUMBLED MANAGER</h2>
+			<div class="buttons">
+			<button>  <a href=" {{url_for('forecast')}}"> FORECAST SALES</a> </button>
+			<button class="btn2"> <a href=" {{url_for('predict_price')}}"> PREDICT PRICES</a> </button>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>

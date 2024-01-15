@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>sales forecasting</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='forecast.js') }}"></script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='forecast.css') }}">
+
+</head>
+
+<body>
+  <div class="img"></div>
+  <button style="color: red; font-size: 15px;"><h1><a href="{{url_for('manager_choice')}}"> BACK </a></h1></button>
+
+ <div class="login">
+    <form class="form">
+      <input type="text" name="start_date" placeholder="Start date" id="uiSqft33" required="required" />
+      <input type="text" name="end_date" placeholder="End date" id="uiSqft32" required="required" />
+      <input type="text" name="expected_sales" placeholder="Expected sales" id="uiSqft31" required="required" />
+      <input type="text" name="month3" placeholder="last month sales" id="uiSqft3" required="required" />
+      <input type="text" name="month2" placeholder="sales two months ago" id="uiSqft2" required="required" />
+		  <input type="text" name="month1" placeholder="sales three months ago" id="uiSqft1" required="required" />
+
+      <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate sales for the next month</button>
+
+      <section>
+        <div id="uiEstimatedPrice" class="result"  class="container">yo	<h2></h2> </div>
+      </section>
+      <input type="text" name="Estimate" placeholder="Put in the estimated sales " id="uiSqft9" required="required" />
+      <h6>see the category's Id that can give the required sales.</h6>
+      <h6>These numbers from 1 to 5 represent the first 5 categories in order of preference . 
+        To see the first Categories on the list, enter 1, for the second, enter 2, and so on. 
+        If you don't mind, leave it uncliked</h6>
+
+      <input type="text" name="class" placeholder="Insert number 1 to see the first category, and so on " id="uiSqft15" required="required" />
+
+      <button class="submit" onclick="onClickedSeeCategorieId()" type="button">Click here to see the Id</button>
+      <section>
+        <div id="uiSeeId" class="result"  class="container">yo	<h2></h2> </div>
+      </section>
+
+      <h6>see the category's name that can give the required sales.</h6>
+      <input type="text" name="catID" placeholder="Insert category's ID" id="uiSqft4" required="required" />
+      <button class="submit" onclick="onClickedGet_categorie_name()" type="button">Click here to see the category's name</button>
+      <section>
+        <div id="uiSeeCN" class="result"  class="container">yo	<h2></h2> </div>
+      </section>
+      <h6>see the client's name that you can sell to, to be able to obtain the required sales.</h6>
+      <button class="submit" onclick="onClickedGet_client_name()" type="button">Click here to see the client's name</button>
+
+      <section>
+        <div id="uiSeeCLN" class="result"  class="container">yo	<h2></h2> </div>
+      </section>   
+      <p></p>
+      <button class="submit" onclick="onClickPossibility()" type="button">Check possibilities</button>
+
+      <div class="def">
+        <div id="uiPossible" class="result"  class="container">yo	o<h2></h2> </div>
+      </div>
+
+    </form>
+   <br>
+   <br>
+
+ </div>
+</body>
+</html>

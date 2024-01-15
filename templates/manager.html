@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='manager.css') }}">
+    <title>welcome to AI world</title>
+</head>
+<body>
+    <h1 style="color: white;">WELCOME TO AI WORLD</h1>
+ <div class="img"></div>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+            <h1 style="color: white;">AI BY NGALI</h1>
+            <button style="color: red; font-size: 25px;"><h1><a href="{{url_for('home')}}" class="btn2"> BACK </a></h1></button>
+            
+        </div>
+        <div class="slider-frame">
+            <div class="slide-images">
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/photo6.png') }}">
+                    </div>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/photo9.png') }}">
+                    </div>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/phott1.png') }}">
+                    </div>
+            </div>
+        </div>
+
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+<!----------------------------- Form box ----------------------------------->    
+    <div class="form-box">
+        
+        <!------------------- login form -------------------------->
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                <header>Login</header>
+            </div>
+
+            <form class="login-form" method="POST" action="{{url_for('manager_choice')}}" >
+
+                <div class="input-box">
+                    <input type="text" class="input-field" id="username" placeholder="Username or Email" required>
+                    <i class="bx bx-user"></i>
+               </div>
+               <div class="input-box">
+                   <input type="password" class="input-field" id="password" placeholder="Password" required>
+                   <i class="bx bx-lock-alt"></i>
+               </div>
+               <div class="input-box">
+                  <input type="submit" class="submit" onclick="loginn()" value="Sign In">
+               </div>
+
+            </form>
+
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remind Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>
+            </div>
+        </div>
+        <!------------------- registration form -------------------------->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+
+            <form class="login-form" method="POST" action="{{url_for('manager')}}" >
+
+                 <div class="two-forms">
+                 <div class="input-box">
+                    <input type="text" class="input-field" id="usernames" placeholder="username" required>
+                    <i class="bx bx-user"></i>
+                 </div>
+
+                 </div>
+                <div class="input-box">
+                   <input type="text" class="input-field" id="email" placeholder="Email" required>
+                   <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                   <input type="password" class="input-field" id="passwords" placeholder="Password">
+                   <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                   <input type="submit" class="submit" onclick="Registers()" value="Register">
+                </div>
+            </form>
+
+
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remind Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+
+                </div>
+                
+            </div>
+        </div>
+    </div> 
+
+    </div>
+
+
+
+ <script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+</script>
+<script>
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+        
+    }
+    
+</script> 
+
+ <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+ </script>
+
+ <script type="text/javascript" src="{{ url_for('static', filename='final.js') }}"></script>
+
+</body>
+</html>
+

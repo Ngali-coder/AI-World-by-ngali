@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome to AI World</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='finalclient.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="img"></div>
+    <div class="full-page">
+        <div class="sub-page">
+            <P><h1  style="color: white;" > WELCOME TO ARTIFICIAL INTELLIGENCE WOLRD !</h1>  </P>
+            <p> <button class="btn2">  <a href="{{url_for('home')}}"> <button style="color: red; font-size: 25px;" >BACK</button> </a>  </button> </p>
+            <div class="navigation-bar">
+
+            <div class="row">
+                <div class="col-1">
+                    <div class="form-box">
+                        <div class="form">
+                            <form class="login-form" method="POST" action="{{url_for('client_choice')}}" >
+                                <center><h1 class="main-heading">Login Form</h1></center>
+
+				                <input type="text"placeholder="username"  id="username" required/>
+				                <input type="password"placeholder="password" id="password" required/>
+				                <button onclick="loginClient()" value="Login">LOGIN</button>
+				                <p class="message">Not Registered? <a href="#">Register</a></p>
+				            </form>
+
+
+                            <form class="register-form" method="POST" action="{{url_for('final_client_login')}}" >
+                                <center><h1 class="main-heading">Register Form</h1></center>
+				                <input type="text" placeholder="user name" id="r_username"/>
+				                <input type="text" placeholder="email-id" id="email"/>
+				                <input type="password" placeholder="password" id="r_password"/>
+				                <button onclick="registerClient()">REGISTER</button>
+				                <p class="message">Already Registered?<a href="#">Login</a>
+				                </p>
+				            </form>
+			             </div>
+	                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'>
+    </script>
+    <script>
+        $('.message a').click(function(){$('form').animate({height: "toggle",opacity: "toggle"},"slow");});
+    </script>
+        <div class="slider-frame">
+            <div class="slide-images">
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/photo3.png') }}">
+                    </div>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/photo2.png') }}">
+                    </div>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename='images/phott1.png') }}">
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
